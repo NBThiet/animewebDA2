@@ -1,0 +1,70 @@
+.animetable{
+   margin-top: 80px;
+   display: table;
+  
+   table-layout: fixed; 
+   border-spacing: 10px;
+  
+ 
+}
+
+.imgpr, .tablepost{
+    display: table-cell;
+
+}
+ .animetable .mucprf{
+    color: #fff;
+    font-family: cursive;
+    margin-top: -17px;
+    
+}
+
+.imgpr{
+    height: 460px;
+    width: 300px;
+    background-color: rgb(52, 51, 68);
+    position: absolute;
+    border-radius: 30px;
+    
+}
+.imgpr img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 5px solid rgba(255, 255, 255, 0.75);
+
+}
+.imgpr h2{
+    text-align: center;
+    font-family: cursive;
+    color: rgb(250, 249, 255);
+    margin-top: 20px;
+
+}
+.tablepost{
+    height: 460px;
+    width: 700px;
+    background-color: rgb(52, 51, 68);
+    border-radius:30px;
+    position: absolute;
+    margin-left: 330px;
+    overflow-y: auto;
+}
+
+.table-hover{
+    color: rgb(195, 197, 204);
+    margin-top:-5px;
+    font-family: cursive;
+
+}
+
+.table-hover th{
+    font-size: 20px;
+    color: azure;
+    
+
+}

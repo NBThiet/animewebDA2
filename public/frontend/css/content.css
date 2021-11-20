@@ -1,0 +1,186 @@
+.containercontent{
+
+    margin-top: -10px;
+    display: table;
+  
+    table-layout: fixed; 
+    border-spacing: 10px;
+    position: relative;
+}
+.contentanime ,.livechat{
+    display: table-cell;
+}
+ .contentanime{
+    width: 75%;
+   margin-top: 72px;
+    display: block;
+    margin-left: 60px;
+ 
+}
+
+ .contentanime h1{
+     margin-left: -40px;
+     color: beige;
+   
+    font-family: cursive;
+}
+ .like {
+     margin-left:60%;
+     margin-top: -50px;
+  
+    
+ }
+ .like i{
+     margin-left: -50px;
+     background-color:rgb(209, 62, 86);
+     width: 100px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 10px;
+     
+ }
+ 
+/* chinh phan ten nguoi dang*/
+  .contentanime .taikhoan{
+    height:50px;
+    width: 100%;
+    margin-top: 30px;
+}
+ .contentanime .taikhoan img{
+    
+    height:50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 4px;
+  
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+  .contentanime .taikhoan .ten{
+margin-top: -50px;
+z-index: -2;
+margin-left: 80px;
+display: block;
+color: azure;
+}
+  .contentanime .taikhoan i{
+    margin-left: 80px;
+    margin-top:10px;
+    display: block;
+    color: beige;
+}
+  .noidung{
+    width:100%;
+    margin-top: 30px;
+    font-size:20px;
+    color: rgb(171, 171, 175);
+    font-family: cursive;
+    text-align: center;
+}
+/* chinh sua phan live chat*/
+.livechat{
+    height: 300px;
+    width:20%;
+   
+   
+  
+}
+
+.livechat .chat{
+     height: 400px;
+    width:310px;
+  background-color: rgb(41, 41, 54);
+    
+    z-index: 1;
+  margin-left: -120px;
+  margin-top: 100px;
+   border-radius:20px;
+   position: fixed;
+    
+}
+/* tai khoan comment*/
+
+.comment::-webkit-scrollbar {
+  display: none;
+}
+
+.comment{
+  overflow-y: auto;
+  height: 300px;
+}
+.comment .taikhoan i{
+  color: rgb(55, 54, 61);
+}
+.tieude{
+  
+  width: 100%;
+}
+.tieude h4{
+  color: beige;
+  margin-left: 20px;
+  margin-top:5px;
+  font-size: 20px;
+  font-family: cursive;
+}
+.tieude hr{
+  height:1px;
+  border:none;
+  color:#333;
+  background-color:#333;
+ margin-top: -15px;
+  margin-left: 15px;
+}
+.smcomment input{
+  
+  height: 30px;
+  width:90%;
+  margin-left: 4%;
+  border-radius:20px;
+  font-size: 18px;
+  background-color: rgb(60, 61, 70);
+  border: none;
+  color: rgb(197, 197, 206);
+}
+.livechat .taikhoan{
+    height:50px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+ .livechat .taikhoan img{
+   
+    margin-left: 20px;
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+   
+  padding: 4px;
+  border-radius: 50%;
+ 
+  
+}
+
+  .livechat .taikhoan .ten{
+margin-top: -50px;
+z-index: -2;
+margin-left: 70px;
+display: block;
+color: azure;
+}
+.livechat .taikhoan i{
+    margin-left: 80px;
+    margin-top:10px;
+    display: block;
+    color: rgb(158, 161, 187);
+}
+.smcomment .ti-comments-smiley {
+  position: absolute;
+  z-index: 3;
+  margin-top: 2px;
+  margin-left: -30px;
+  border-radius: 50%;
+  background-color:rgb(132, 99, 163);
+  padding: 5px 5px;
+  color:aliceblue;
+}

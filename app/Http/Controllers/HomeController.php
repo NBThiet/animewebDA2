@@ -39,9 +39,9 @@ class HomeController extends Controller
     $cate_product = DB::table('tbl_category_product')
     ->where('category_product_status','0')->orderby('category_id','desc')->get();
 
-    $all_product_profile = DB::table('tbl_bloger')
+    $all_product_profile = DB::table('tbl_product')
    
-    ->join('tbl_product','tbl_product.product_id','=','tbl_bloger.product_id')
+    ->join('tbl_bloger','tbl_bloger.bloger_id','=','tbl_product.bloger_id')
    // ->join('tbl_comment','tbl_comment.comment_id','=','tbl_product.comment_id')
     ->orderby('tbl_product.product_id','desc')->paginate(5);
    
