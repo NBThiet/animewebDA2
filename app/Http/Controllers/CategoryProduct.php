@@ -87,7 +87,7 @@ public function show_category_home(Request $request ,$slug_category_product){
     $category_by_id = DB::table('tbl_product')->join('tbl_category_product','tbl_product.category_id','=','tbl_category_product.category_id')
     ->where('tbl_category_product.slug_category_product',$slug_category_product)
     ->join('tbl_bloger','tbl_bloger.bloger_id','=','tbl_product.bloger_id')
-    ->orderby('product_id','desc')->limit(4)->get();
+    ->orderby('product_id','desc')->simplePaginate(8);
    
   /*  foreach($category_by_id as $key => $val){
     //seo
@@ -102,7 +102,8 @@ public function show_category_home(Request $request ,$slug_category_product){
     $category_name = DB::table('tbl_category_product')
     ->where('tbl_category_product.slug_category_product',$slug_category_product)
     ->limit(1)->get();
-    return view('pages.show_category')->with('category',$cate_product)
+    return view('pages.show_category')
+    ->with('category',$cate_product)
     ->with('bloger',$bloger_product)
     ->with('category_by_id',$category_by_id)
     ->with('category_name',$category_name);

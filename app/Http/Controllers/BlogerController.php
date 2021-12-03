@@ -26,6 +26,19 @@ class BlogerController extends Controller
         return view('auth.signin_bloger');
     }
     
+    public function all_bloger(){
+      
+    	$all_product = DB::table('tbl_product')
+        ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
+        ->join('tbl_bloger','tbl_bloger.bloger_id','=','tbl_product.bloger_id')
+       // ->join('tbl_comment','tbl_comment.comment_id','=','tbl_product.comment_id')
+        ->orderby('tbl_product.product_id','desc')->paginate(5);
+    	$manager_product  = view('admin.all_bloger')->with('all_bloger',$all_product);
+    	
+    	return view('admin_layout')->with('admin.all_bloger', $manager_product);
+    
+
+    }
   
   public function showregister(){
 

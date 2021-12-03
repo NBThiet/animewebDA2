@@ -13,6 +13,7 @@ class commentModel extends Model
      *
      * @var string[]
      */
+    public $timestamps = false;
     protected $fillable = [
         'comment_content',
         'bloger_id',
@@ -20,4 +21,5 @@ class commentModel extends Model
     ];
     protected $primaryKey = 'comment_id';
     protected $table = 'tbl_comment';
+   
 }

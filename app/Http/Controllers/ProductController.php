@@ -51,20 +51,20 @@ class ProductController extends Controller
       // $data['comment_id'] = $request->product_comment;
         $data['product_status'] = $request->product_status;
         $data['product_time'] = $request->product_time;
-        $data['product_img'] = $request->product_status;
-        $get_img = $request->file('product_img');
+        $data['product_video'] = $request->product_status;
+        $get_img = $request->file('product_video');
       
         if($get_img){
             $get_name_img = $get_img->getClientOriginalName();
             $name_img = current(explode('.',$get_name_img));
             $new_img =  $name_img.rand(0,99).'.'.$get_img->getClientOriginalExtension();
             $get_img->move('public/uploads/product',$new_img);
-            $data['product_img'] = $new_img;
+            $data['product_video'] = $new_img;
             DB::table('tbl_product')->insert($data);
             Session::put('message','Thêm sản phẩm thành công');
             return Redirect::to('add-product');
         }
-        $data['product_img'] = '';
+        $data['product_video'] = '';
     	DB::table('tbl_product')->insert($data);
     	Session::put('message','Thêm sản phẩm thành công');
     	return Redirect::to('all-product');
@@ -105,15 +105,15 @@ class ProductController extends Controller
       // $data['comment_id'] = $request->product_comment;
         $data['product_status'] = $request->product_status;
         $data['product_time'] = $request->product_time;
-        $data['product_img'] = $request->product_status;
-        $get_img = $request->file('product_img');
+        $data['product_video'] = $request->product_status;
+        $get_img = $request->file('product_video');
         
         if($get_img){
                     $get_name_img = $get_img->getClientOriginalName();
                     $name_img = current(explode('.',$get_name_img));
                     $new_img =  $name_img.rand(0,99).'.'.$get_img->getClientOriginalExtension();
                     $get_img->move('public/uploads/product',$new_img);
-                    $data['product_img'] = $new_img;
+                    $data['product_video'] = $new_img;
                     DB::table('tbl_product')->where('product_id',$product_id)->update($data);
                     Session::put('message','Cập nhật sản phẩm thành công');
                     return Redirect::to('all-product');
@@ -140,7 +140,11 @@ public function details_product($product_id, Request $request){
     ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
     ->join('tbl_bloger','tbl_bloger.bloger_id','=','tbl_product.bloger_id')
     ->where('tbl_product.product_id',$product_id)->get();
-  
+    $comment_product = DB::table('tbl_comment')
+    ->join('tbl_bloger','tbl_bloger.bloger_id','=','tbl_comment.bloger_id')
+    ->join('tbl_product','tbl_product.product_id','=','tbl_comment.product_id')
+
+     ->where('tbl_product.product_id',$product_id)->get();
     foreach($details_product as $key => $value){
         $category_id = $value->category_id;
        
@@ -156,33 +160,55 @@ public function details_product($product_id, Request $request){
     ->with('category',$cate_product)
     ->with('bloger',$bloger_product)
     ->with('product_details',$details_product)
-    ->with('relate',$related_product);
+    ->with('relate',$related_product)
+    ->with('comment',$comment_product);
   
     }
 // phan comment
+public function Comment(Request $request){
+
+    $comment = array();
+
+    $comment['comment_content'] = $request->comment_content;
+    $comment['bloger_id'] = Session::get('bloger_id');
+    $comment['product_id'] = $request->comment_product;
+    $product_id = $request->comment_product;
+    DB::table('tbl_comment')->insert($comment);
+    return Redirect::to('chi-tiet-anime/'.$product_id);
+
+}
+    	
+
+/*
 public function send_comment(Request $request){
     $product_id = $request->product_id;
     $comment_content = $request->comment_content;
+    $bloger_id = Session::get('bloger_id');
     $comment = new Comment();
     $comment->comment_content = $comment_content;
     $comment->product_id = $product_id;
-
+    $comment->bloger_id = $bloger_id;
     $comment -> save();
-
-
 }
 public function load_comment(Request $request){
     $product_id = $request->product_id;
-    $comment = commentModel::where('product_id',$product_id)->get;
+    $comment = commentModel::where('product_id',$product_id)
+    ->join('tbl_bloger','tbl_bloger.bloger_id','=','tbl_product.bloger_id')
+    ->get();
+    $output='';
  foreach($comment as $key=>$comm){
-     $output.=` <div class="taikhoan">
-  
-      <img src=".'ulr('/public/images/avatar/.'$comm->bloger_avt')'." alt="">
- 
-      <b class="ten">.'$comm->bloger_name.'<b>
-      <i>.'$comm->comment_content'.</i>
-      <i class="fab fa-telegram-plane"></i>
-  </div>`;
+     $output.=` <div class="message anim" style="--delay: .1s">
+     <div class="author-img__wrapper video-author video-p">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+       <path d="M20 6L9 17l-5-5" />
+      </svg>
+      <img class="author-img" src=".'.public/images/avatar/'.$comm->bloger_avt.'." />
+     </div>
+     <div class="msg-wrapper">
+      <div class="msg__name video-p-name">'.$comm->bloger_name.'</div>
+      <div class="msg__content video-p-sub">'.$comm->comment_content.'</div>
+     </div>
+    </div>`;
  }
  echo $output;
 }

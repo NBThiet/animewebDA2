@@ -12,7 +12,7 @@
 
 <style>
   body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background: linear-gradient(-45deg, #eea58f, #f083ad, #6cc3e2, #68dfc3);
 	background-size: 400% 400%;
 	animation: gradient 8s ease infinite;
 	height: 100vh;
@@ -38,12 +38,12 @@ form {
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
-    background-image: linear-gradient(-225deg, #add1e2 50%, #e99fe5 50%);
+    background-image: linear-gradient(-225deg, #1683e9 50%, rgba(248, 32, 140, 0.8) 50%);
 }
 .inputfile + label {
     font-size: 1.25em;
     font-weight: 700;
-    color: white;
+    color: rgb(106, 236, 208);
     background-color: black;
     display: inline-block;
     cursor: pointer;

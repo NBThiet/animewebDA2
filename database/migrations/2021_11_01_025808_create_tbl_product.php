@@ -21,7 +21,7 @@ class CreateTblProduct extends Migration
             $table->string('product_name');
             $table->string('product_time');
             $table->text('product_content');
-            $table->string('product_img');
+            $table->string('product_video');
             $table->timestamps();
         });
     }

@@ -2,81 +2,88 @@
 
 @section('content')
 
-<div class="container">
-    <h2>Discover</h2>
-    <div class="slide">
-       <div class="img1">
-           <p>“It’s foolish to fear </br>
-            what we have yet</br>
-             to see and know.”</p>
-           <div class="profile1">
-      <img src="public/frontend/images/tanjiro.jpg" alt="">
-      <span>Sky Nguyễn</span>
-      <i>.52K view</i>
-    </div>
+<div class="main-header anim" style="--delay: 0s">Discover</div>
+    <div class="main-blogs">
+     <div class="main-blog anim" style="--delay: .1s">
+      <div class="main-blog__title">“It’s foolish to fear
+        what we have yet
+         to see and know.”</div>
+      <div class="main-blog__author">
+       <div class="author-img__wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+         <path d="M20 6L9 17l-5-5" />
+        </svg>
+        <img class="author-img" src="https://thuthuatnhanh.com/wp-content/uploads/2018/07/avatar-anime-boy-dep-453x390.jpg" />
        </div>
-       <div class="img2">
-           <p>
-            “There’s no such </br>
-            thing as a free wish.”
-           </p>
-        <div class="profile1">
-            <img src="public/frontend/images/todoroki.jpg" alt="">
-            <span>Todoroki</span>
-            <i>.45K view</i>
-          </div>
+       <div class="author-detail">
+        <div class="author-name">Ken</div>
+        <div class="author-info">53K views <span class="seperate"></span></div>
        </div>
+      </div>
+      <div class="main-blog__time">7 min</div>
+     </div>
+     <div class="main-blog anim" style="--delay: .2s">
+      <div class="main-blog__title"> “There’s no such
+        thing as a free wish.”</div>
+      <div class="main-blog__author tips">
+       <div class="main-blog__time">7 min</div>
+       <div class="author-img__wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+         <path d="M20 6L9 17l-5-5" />
+        </svg>
+        <img class="author-img" src="https://pi102.com/wp-content/uploads/2021/02/anime-nam-ngau-10.jpg"/>
+       </div>
+       <div class="author-detail">
+        <div class="author-name">Sky Nguyen</div>
+        <div class="author-info">53K views <span></span></div>
+       </div>
+      </div>
+     </div>
     </div>
-
-        <div class="anime">
-          @foreach ($all_product as $key => $product)
-          
-          <div class=anime1>
-            <div class="animes"><a href="{{URL::to('/chi-tiet-anime/'.$product->product_id)}}"><img src="{{URL::to('public/uploads/product/'.$product->product_img)}}" stt="ee1"alt="" srcset=""></a> </div>
-            <div class="nar"><h3>{{$product->product_name}}</h3>
-             <div class="admin">
-                 <img src="{{URL::to('public/images/avatar/'.$product->bloger_avt)}}" alt="">
-                 <span>{{$product->bloger_name}}</span>
-             </div> 
-         </div>
-           
-           
-              </div>
+ 
+    <div class="small-header anim" style="--delay: .3s">New Anime</div>
+    <div class="videos">
+      @foreach ($all_product as $key => $product)
+     <div class="video anim" style="--delay: .4s">
+      <div class="video-time">new</div>
+      <a href="{{URL::to('/chi-tiet-anime/'.$product->product_id)}}">
+      <div class="video-wrapper">
+   
+       <video muted="">
+        <source src="{{URL::to('public/uploads/product/'.$product->product_video)}}" type="video/mp4">
+       </video>
+       
+       <div class="author-img__wrapper video-author">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+         <path d="M20 6L9 17l-5-5" />
+        </svg>
+        <img class="author-img" src="{{URL::to('public/images/avatar/'.$product->bloger_avt)}}" />
+       </div>
+     
+      </div>
+    </a>
+      <div class="video-by">{{$product->bloger_name}}</div>
+      <div class="video-name">{{$product->product_name}}</div>
+      <div class="video-view">{{$product->product_time}}<span class="seperate video-seperate"></span></div>
+     </div>
         
-              @endforeach
-  
-            <!--    <div class=anime1>
-               <div class="animes"><a href=""><img src="https://i.pinimg.com/originals/5f/28/e3/5f28e357899f33b6f02ec2de67b08fe3.jpg" stt="ee1"alt="" srcset=""></a> </div>
-               <div class="nar"><h3>Onepice</h3>
-                <div class="admin">
-                    <img src="https://c.wallhere.com/photos/5d/13/women_anime_girls_portrait_display_artwork_digital_art_2D_looking_at_viewer_fangs-1497575.jpg!d" alt="">
-                    <span>Kaneki</span>
-                </div> 
-            </div>
-              
-              </div>
-            <div class=anime1>
-                <div class="animes"><a href=""><img src="public/frontend/images/drgball.jpg"stt="2" alt="" srcset=""></a> </div>
-                <div class="nar"><h3>Dragon Ball</h3>
-                    <div class="admin">
-                        <img src="https://static4.aniimg.com/upload/20181104/5774/Y/w/B/YwBlEF.jpg" alt="">
-                        <span>Obito</span>
-                    </div> 
-                </div>
-              
-              </div>
-              <div class=anime1>
-                <div class="animes mo"><a href=""><img src="https://s199.imacdn.com/ta/2017/03/03/392b3cecbe11ab94_641c16829005f87f_34539714885061647143215.jpg" stt="3"alt="" srcset=""></a> </div>
-                <div class="nar"><h3>Fairy Tail</h3>
-                    <div class="admin">
-                        <img src="https://i.pinimg.com/564x/f2/16/40/f216407991c291b4a6eb3cd21d569948.jpg" alt="">
-                        <span>Shisui</span>
-                    </div> 
-                </div>
-              
-              </div>
-              </div>-->
+     @endforeach
     </div>
+<script>
+  const allVideos = document.querySelectorAll(".video");
+
+allVideos.forEach((v) => {
+ v.addEventListener("mouseover", () => {
+  const video = v.querySelector("video");
+  video.play();
+ });
+ v.addEventListener("mouseleave", () => {
+  const video = v.querySelector("video");
+  video.pause();
+ });
+});
+
+</script>
 
     
 @endsection

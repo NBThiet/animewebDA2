@@ -33,9 +33,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <section id="container">
 <!--header start-->
-<header class="header fixed-top clearfix">
+<header class="header fixed-top clearfix"  style="background-color: rgb(56, 56, 73)">
 <!--logo start-->
-<div class="brand">
+<div class="brand" style="background-color: rgb(43, 55, 90)">
     <a href="index.html" class="logo">
         ADMIN
     </a>
@@ -45,17 +45,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--logo end-->
 
-<div class="top-nav clearfix">
+<div class="top-nav clearfix"  style="background-color: rgb(56, 56, 73)">
     <!--search & user info start-->
-    <ul class="nav pull-right top-menu">
-        <li>
-            <input type="text" class="form-control search" placeholder=" Search">
-        </li>
+    <ul class="nav pull-right top-menu" >
+       
         <!-- user login dropdown start-->
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+        <li class="dropdown" >
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#" style="background-color: rgb(122, 122, 122)">
                 <img alt="" src="https://gamek.mediacdn.vn/133514250583805952/2020/4/29/photo-1-15881480277132025567834.jpg">
-                <span class="username">
+                <span class="username" >
                 	<?php
 					$name = Session::get('admin_name');
 					if($name){
@@ -84,7 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <aside>
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
-        <div class="leftside-navigation">
+        <div class="leftside-navigation" style="background-color: rgb(47, 54, 52)">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
                     <a class="active" href="{{URL::to('/dashboard')}}">
@@ -137,8 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Quản lí người dùng</span>
                     </a>
                     <ul class="sub">
-						<li><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
-						<li><a href="{{URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>
+						<li><a href="{{URL::to('/all-bloger')}}">Liet Ke Tai Khoan</a></li>
                       
                     </ul>
                 </li>
@@ -149,12 +146,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </aside>
 <!--sidebar end-->
 <!--main content start-->
-<section id="main-content">
-	<section class="wrapper">
+<section id="main-content"  style="background-color: rgb(56, 56, 73)">
+	<section class="wrapper" style="background-color: rgb(56, 56, 73)">
         @yield('admin_content')
     </section>
  <!-- footer -->
-		  <div class="footer">
+		  <div class="footer"  style="background-color: rgb(56, 56, 73)">
 			<div class="wthree-copyright">
 			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 			</div>

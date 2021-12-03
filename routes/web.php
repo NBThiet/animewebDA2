@@ -95,21 +95,29 @@ Route::get('/active-product/{product_id}', [ ProductController::class, 'active_p
 Route::post('/save-product', [ ProductController::class, 'save_product']);
 Route::post('/update-product/{product_id}', [ ProductController::class, 'update_product']);
 
-//product_profile
+
+// product profile 
+Route::get('/edit-product-profile/{product_id}', [ HomeController::class, 'edit_product_profile']);
+Route::get('/delete-product-profile/{product_id}', [ HomeController::class, 'delete_product_profile']);
+
+Route::post('/update-product-profile/{product_id}', [ HomeController::class, 'update_product_profile']);
 
 
+// manage bloger
 
-Route::get('/edit-product-profile/{product_id}', [ ProductController::class, 'edit_product']);
-Route::get('/delete-product-profile/{product_id}', [ ProductController::class, 'delete_product']);
-
-Route::post('/update-product-profile/{product_id}', [ ProductController::class, 'update_product']);
+Route::get('/delete-bloger/{bloger_id}', [ BlogerController::class, 'delete_bloger']);
+Route::get('/all-bloger', [ BlogerController::class, 'all_bloger']);
 
 
 // tim kiem
 
 Route::post('/tim-kiem', [ HomeController::class, 'search']);
+Route::get('/tim-kiem', [ HomeController::class, 'search']);
 
-// comment
-Route::post('/comment-ajax', [ ProductController::class, 'load_comment']);
-Route::post('/send-comment-ajax', [ ProductController::class, 'send_comment']);
 
+/* comment
+Route::post('/load-comment', [ ProductController::class, 'load_comment']);
+Route::post('/sent-comment', [ ProductController::class, 'send_comment']);
+*/
+
+Route::post('/comment', [ProductController::class, 'Comment']);

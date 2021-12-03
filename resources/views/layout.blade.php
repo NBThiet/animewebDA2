@@ -1,665 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeDiscover</title>
-    <link rel="stylesheet" href="{{asset('public/frontend/css/shop.css')}}">
-    <link rel="stylesheet" href="{{asset('public/frontend/css/profile.css')}}">
-    <link rel="stylesheet" href="{{asset('public/frontend/css/content.css')}}">
+  <meta charset="UTF-8">
+  <title>Anime Web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://vjs.zencdn.net/5-unsafe/video-js.css'><link rel="stylesheet" href="./style.css">
+<!--
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="{{asset('public/frontend/css/profile.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/all.css')}}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+-->
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="public/frontend/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="public/frontend/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="public/frontend/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- favicon -->
+
+<link rel="stylesheet" href="{{asset('public/frontend/css/profile.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/al.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/font/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/font/themify-icons/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('public/frontend/font/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/addAnim.css')}}">
 
-   <style>
-       body{
-  
-  background-image: url(https://allimages.sgp1.digitaloceanspaces.com/photographercomvn/2020/08/Hinh-anh-bau-troi-dem-sao-tuyet-dep-va-binh.png);
-  
-  
-}
+<link rel="stylesheet" href="{{asset('public/frontend/css/stylepro.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/styleadd.css')}}">
 
-.theroot{
-  background-color: rgb(26, 26, 39);
-  position: relative;
-  width: 96%;
-  margin-left: 2%;
-  height: 620px;
-  margin-top:15px;
-  border-radius: 30px;
-  position: fixed;
-  overflow-y: auto;
-  z-index: 2;
-}
-.theroot::-webkit-scrollbar{
-  display: none;
-}
-.main{
-  
-  display: table;
+<link rel="stylesheet" href="{{asset('public/frontend/font/angle-double-small-left.svg')}}">
 
-  table-layout: fixed; 
-  border-spacing: 10px;
-
-
-
-}
-.main .menu, .main .content,.main {
-  display: table-cell;
-}
-
-.menu{
-  width: 15%;
-  position: absolute;
-  height: 600px;
-  position: fixed;
-  overflow-y: auto;
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-}
-.menu::-webkit-scrollbar { 
-  width: 0 !important;
-  display: none; 
-}
-.menu span{
-  color: rgb(109, 106, 112);
-  font-size: 15px;
-  margin-left:0px;
-}
-.menu li{
-  padding: 15px  0 ;
-  text-decoration: none;
-  list-style-type: none;
-  color: rgb(109, 106, 112);
-  font-size: 20px;
- 
-  border-radius: 20px;
-  margin-top: -5px;
-  
-}
-.menu li a{
-  text-decoration: none;
-  color: rgb(109, 106, 112);
-}
-.menu ul{
-  margin-top: 40px;
-}
-
-.menu hr{
-  height:1px;
-  border:none;
-  color:#333;
-  background-color:#333;
-}
-
-.content{
-position: absolute;
-margin-left: 15%;
-
-}
-
-.head input{
-  width: 400px;
-  margin-left: 20px;
-  margin-top: 20px;
-  height: 30px;
-  border-radius: 10px;
-  background-color: rgb(66, 66, 75);
-  border: none;
-}
-.head .ti-search{
-  margin-left: 0px;
-  margin-top: 3px;
-  color: rgb(240, 236, 243);
-  width:50px;
-  font-size:15px;
-  text-align:center;
-  height:30px;
-}
-.head .admin, .anime .admin{
-  margin-left:  82%;
-  margin-top: -3%;
-
-}
-.head .admin img,  .anime .admin img {
-  height: 42px;
-  width: 42px;
-  border-radius: 50%;
- 
-  padding: 4px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  
-  
-}
-.head .admin span a , .anime .admin span{
-  color:rgb(207, 208, 221);
-  margin-left:25%;
-  margin-top:-30px;
-  font-size: 18px;
-  z-index: -2;
-  display: block;
-  text-decoration: none;
-  list-style-type: none;
-}
-.head{
- z-index: 2;
- position: fixed;
- background-color: rgb(26, 26, 39);
-width: 78%;  
-height: 80px;
-border-radius:0 30px 0 0;
- 
-}
-.container  h2{
-
-  font-size: 30px;
-  color:rgb(207, 208, 221);
-  font-family:Arial, Helvetica, sans-serif ;
-  margin-top: 70px;
-}
-
-.content .container {
-  
-  overflow-y: auto;
-  display: table;
- 
-  margin-left: -1%;
-  table-layout: fixed; 
-  border-spacing: 10px;
-  height:500px;
-}
-.container .slide{
-  margin-top: 0px;
-  width: 100%;
-}
-.container .img1 , .container .img2{
-  display: table-cell;
-}
-.content .container .slide .img1{
-  width: 70%;
-  height: 300px;
-  z-index: 1;
- 
-  background-size: 88%;
-  background-image: url(https://st.quantrimang.com/photos/image/2019/04/24/Naruto-Wallpaper-18.jpg);
-  border-radius: 30px;
-  background-position: -50px -10px;
-}
-.content .container .slide .img2{
-  width: 50%;
- 
-  height: 300px;
-  z-index: 1;
-  
-  background-image: url(https://cdn.donmai.us/original/d3/1f/__yato_noragami_drawn_by_nian__d31f6795d58b5a12b219651247e45981.jpg);
-  border-radius: 30px;
-  margin-left: 72%;
-  background-size: 350px;
- 
-  
-}
-
-/* phần hiện tài khoản*/
-.content .container .slide .img1 .profile1{
-  margin-top: 30px;
-  
-  height: 42px;
-
-  margin-left: 5%;
-}
-.content .container .slide .img2 .profile1{
-  margin-top: 80px;
-  
-  height: 42px;
-
-  margin-left: 6%;
-}
-.profile1 span{
-  color: rgb(192, 197, 202);
-  display: block;
-  margin-left: 70px;
-  margin-top: -60px;
-  font-size: 20px;
-}
-.profile1 i{
-  color: rgb(192, 197, 202);
-  display: block;
-  margin-left: 70px;
-  margin-top: 10px;
-  font-size: 18px;
-}
-.img2 span{
-  color: rgb(197, 9, 81);
-  display: block;
- margin-left: -1px;
-  margin-top: -110px;
-  font-size: 20px;
-}
-.img2 i{
-  color: rgb(148, 63, 63);
-  display: block;
-  
-  margin-top: 3px;
-  font-size: 18px;
-  margin-left: -10px;
-}
-.content .container .slide .img1 img{
-  width: 52px;
-height: 52px;
-border: 1px solid rgba(255, 255, 255, 0.75);
-padding: 4px;
-border-radius: 50%;
--o-object-fit: cover;
-   object-fit: cover;
-} 
-.content .container .slide .img2 img{
-  width: 42px;
-height: 42px;
-border: 1px solid rgba(37, 63, 209, 0.75);
-padding: 4px;
-border-radius: 50%;
--o-object-fit: cover;
-   object-fit: cover;
-} 
-.content .container .slide .img1 span{
-
-}
-.img1 p{
-  font-size: 30px;
-  color: #fff;
-  margin-left: 4%;
- 
- font-family:Florence, cursive;
-}
-
-.img2 p{
-  font-size: 30px;
-  color: #fff;
-  margin-left: 4%;
- 
- font-family:Florence, cursive;
-}
-
-/* chinh cac bo anime*/
-
-/* nơi thêm các bộ anime*/
-.anime{
-  width: 100%;
-  display: table;
-
-  table-layout: fixed; 
-  border-spacing: 10px;
- margin-top: 5%;
-}
-.anime .anime1{
-  display: table-cell;
-  position: relative;
- 
-
- box-sizing: border-box;
- 
- overflow: hidden;
-}
-.anime .animes{
-  border-radius: 30px;
-}
-.animes img{
-  height: 300px;
-  width: auto;
- border-radius: 30px;
-}
-.anime .animes img:hover{
- 
-   opacity: 0.5;
-}
-/*phần hiện lên khi hover vào anime*/
-.anime .anime1 .nar{
-  
-  height:100px;
-  margin-top: -100px;
-  position: absolute;
-  width:213px;
-  left: 0px;
-   border-radius: 0 0 30px 30px;
-   background: rgb(46, 46, 51,0.7) ;
- 
-}
-.anime .anime1:hover .nar{
-  
-
-}
-.anime .anime1 .nar h3{
-
-   color: #fff;
-   justify-content: center;
-   text-align: center;
-   margin-top: 40px;
-}
-
-/* phan admin anime*/
-.anime .admin{
-   margin-left:  20px;
-   margin-top: -100px;
-   
-}
- .anime .admin img {
-   height: 42px;
-   width: 42px;
-   border-radius: 50%;
-   border: 1px solid rgba(255, 255, 255, 0.75);
-   padding: 4px;
-   border-radius: 50%;
-   -o-object-fit: cover;
-      object-fit: cover;
-   
-}
-.anime .admin span{
-   color:rgb(253, 253, 253);
-   margin-left:25%;
-   margin-top:-25px;
-   font-size: 18px;
-   z-index: -2;
-   display: block;
-}
-/*phan content */
-.containercontent{
-
-margin-top: -10px;
-display: table;
-
-table-layout: fixed; 
-border-spacing: 10px;
-position: relative;
-}
-.contentanime ,.livechat{
-display: table-cell;
-}
-.contentanime{
-width: 75%;
-margin-top: 72px;
-display: block;
-margin-left: 60px;
-
-}
-
-.contentanime h1{
- margin-left: -40px;
- color: beige;
-
-font-family: cursive;
-}
-.like {
- margin-left:60%;
- margin-top: -50px;
-
-
-}
-.like i{
- margin-left: -50px;
- background-color:rgb(209, 62, 86);
- width: 100px;
-padding: 10px 0;
-text-align: center;
-border-radius: 10px;
- 
-}
-
-/* chinh phan ten nguoi dang*/
-.contentanime .taikhoan{
-height:50px;
-width: 100%;
-margin-top: 30px;
-}
-.contentanime .taikhoan img{
-
-height:50px;
-width: 50px;
-border-radius: 50%;
-border: 1px solid rgba(255, 255, 255, 0.75);
-padding: 4px;
-
--o-object-fit: cover;
- object-fit: cover;
-}
-
-.contentanime .taikhoan .ten{
-margin-top: -50px;
-z-index: -2;
-margin-left: 80px;
-display: block;
-color: azure;
-}
-.contentanime .taikhoan i{
-margin-left: 80px;
-margin-top:10px;
-display: block;
-color: beige;
-}
-.noidung{
-width:100%;
-margin-top: 30px;
-font-size:15px;
-color: rgb(171, 171, 175);
-font-family: cursive;
-text-align: center;
-}
-/* chinh sua phan live chat*/
-.livechat{
-height: 300px;
-width:20%;
-
-
-
-}
-
-.livechat .chat{
- height: 400px;
-width:310px;
-background-color: rgb(41, 41, 54);
-
-z-index: 1;
-margin-left: -120px;
-margin-top: 100px;
-border-radius:20px;
-position: fixed;
-
-}
-/* tai khoan comment*/
-
-.comment::-webkit-scrollbar {
-display: none;
-}
-
-.comment{
-overflow-y: auto;
-height: 300px;
-}
-.comment .taikhoan i{
-color: rgb(55, 54, 61);
-}
-.tieude{
-
-width: 100%;
-}
-.tieude h4{
-color: beige;
-margin-left: 20px;
-margin-top:5px;
-font-size: 20px;
-font-family: cursive;
-}
-.tieude hr{
-height:1px;
-border:none;
-color:#333;
-background-color:#333;
-margin-top: -15px;
-margin-left: 15px;
-}
-.smcomment input{
-
-height: 30px;
-width:90%;
-margin-left: 4%;
-border-radius:20px;
-font-size: 18px;
-background-color: rgb(60, 61, 70);
-border: none;
-color: rgb(197, 197, 206);
-}
-.livechat .taikhoan{
-height:50px;
-width: 100%;
-margin-bottom: 20px;
-}
-.livechat .taikhoan img{
-
-margin-left: 20px;
-height:40px;
-width: 40px;
-border-radius: 50%;
-
-padding: 4px;
-border-radius: 50%;
-
-
-}
-
-.livechat .taikhoan .ten{
-margin-top: -40px;
-z-index: -2;
-margin-left: 70px;
-display: block;
-color: azure;
-}
-.livechat .taikhoan i{
-margin-left: 70px;
-margin-top:7px;
-display: block;
-color: rgb(158, 161, 187);
-
-}
-.smcomment .ti-comments-smiley {
-position: absolute;
-z-index: 3;
-margin-top: 2px;
-margin-left: -30px;
-border-radius: 50%;
-background-color:rgb(132, 99, 163);
-padding: 5px 5px;
-color:aliceblue;
-}
-
-   </style>
+<link rel="stylesheet" href="{{asset('public/frontend/font/themify-icons/themify-icons.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/font/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <div class="theroot">
-        <div class="main">
-    <div class="menu">
-        <li class="ti-angle-double-left" > <a href="{{URL::to('/homepage')}}">Home Page</a> </li>
-    <ul>
-        <span>MENU</span>
-       <li class="ti-home menucon" > <a href="{{URL::to('/discover')}}" >Discover</a> </li>
-       
-        <li class="ti-gallery">  <a href="{{URL::to('/add-product')}}"class="menucon">Create Post</a> </li>
-       
-        <li class="ti-shift-left">  <a href="{{URL::to('/')}}"class="menucon">SingOut</a> </li>
-       
-    </ul>
-    <hr  width="60%" align="center" />
-   <ul>
-       @foreach($category as $key => $cate)
-       <li class="{{$cate ->category_product_icon}}"> <a href="{{URL::to('/danh-muc-anime/'.$cate->slug_category_product)}}">
-       {{$cate->category_product_name}}</a></li>
+  <style>
+    .container {
+  background-color: var(--theme-bg);
+  max-width: 1500px;
+  max-height: 900px;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  width: 107%;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
 
-       @endforeach
-   </ul>
-   
-    </div>
-  
-    <div class="content">
-      
-        <div class="head">
-            <form action="{{URL::to('/tim-kiem')}}" method="POST" >
-                {{csrf_field()}}
+  </style>
 
-        <input type="text"  name="keywords_submit" id=""style="color: rgb(214, 203, 203)">
-       <button type="submit" name="search_items" style="background-color:rgb(66, 66, 75);border-style: none;margin-left:-37px; "> 
-        <i class="ti-search" style="color: rgb(165, 162, 162)" ></i> </button>
-    </form>
-        <div class="admin">
-         <img src="{{URL::to('public/images/avatar/'.Session::get('bloger_avt'))}}" alt="">;
-          
-            <span><a href="{{URL::to('/profile')}}" class="nameprf" >
-            <?php
-                $name = Session::get('bloger_name');
-                if($name){
-                    echo $name;
-                    
-                }
-                ?></a></span>
-        </div>
-      
-    </div>
-   
-   
-  @yield('content');
-   
-    </div>
-  
+  <script>
+    
+    $(function () {
+ $(".sidebar-link").click(function () {
+  $(".sidebar-link").removeClass("is-active");
+  $(this).addClass("is-active");
+ });
+});
 
-</div>
-    </div>
-<script src="text/javascript">
-$(document).ready(function(){
-  load_comment();
-  function load_comment() {
-    var product_id = $('.comment_product_id').val();
-  var _token=$('input[name="_token"]').val();,
-    $.ajax({
-      url:"{{url('/comment-ajax')}}",
-      method:"POST",
-      data:{product_id:product_id,_token:_token},
-      success:function(data){
-        $('#comment_show').html(data);
-      }
-    });
+$(window)
+ .resize(function () {
+  if ($(window).width() > 1090) {
+   $(".sidebar").removeClass("collapse");
+  } else {
+   $(".sidebar").addClass("collapse");
   }
-  $('send-comment').click(function (){
-    var product_id = $('.comment_product_id').val();
-  var _token=$('input[name="_token"]').val();,
-  $.ajax({
-      url:"{{url('/send-comment-ajax')}}",
-      method:"POST",
-      data:{product_id:product_id,comment_content:comment_content,_token:_token},
-      success:function(data){
-      
-       load_comment();
+ })
+ .resize();
 
-      }
-    });
+
+$(function () {
+ $(".logo, .logo-expand, .discover").on("click", function (e) {
+  $(".main-container").removeClass("show");
+  $(".main-container").scrollTop(0);
+ });
+ $(".trending, .video").on("click", function (e) {
+  //$(".main-container").addClass("show");
+  $(".main-container").scrollTop(0);
+  $(".sidebar-link").removeClass("is-active");
+ // $(".trending").addClass("is-active");
+ });
+
+ $(".video").click(function () {
+  var source = $(this).find("source").attr("src");
+  var title = $(this).find(".video-name").text();
+  var person = $(this).find(".video-by").text();
+  var img = $(this).find(".author-img").attr("src");
+  $(".video-stream video").stop();
+  $(".video-stream source").attr("src", source);
+  $(".video-stream video").load();
+  $(".video-p-title").text(title);
+  $(".video-p-name").text(person);
+  $(".video-detail .author-img").attr("src", img);
+ });
+});
+  </script>
+<!-- partial:index.partial.html -->
+<div class="container">
+ <div class="sidebar">
+  <span class="logo">S</span>
+  <a class="logo-expand" href="{{URL::to('/homepage')}}">home page</a>
+  <div class="side-wrapper">
+   <div class="side-title">MENU</div>
+   <div class="side-menu">
+    <a class="sidebar-link discover is-active" href="{{URL::to('/discover')}}">
+     <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M9.135 20.773v-3.057c0-.78.637-1.414 1.423-1.414h2.875c.377 0 .74.15 1.006.414.267.265.417.625.417 1v3.057c-.002.325.126.637.356.867.23.23.544.36.87.36h1.962a3.46 3.46 0 002.443-1 3.41 3.41 0 001.013-2.422V9.867c0-.735-.328-1.431-.895-1.902l-6.671-5.29a3.097 3.097 0 00-3.949.072L3.467 7.965A2.474 2.474 0 002.5 9.867v8.702C2.5 20.464 4.047 22 5.956 22h1.916c.68 0 1.231-.544 1.236-1.218l.027-.009z" />
+     </svg>
+     Discover
+    </a>
+    <a class="sidebar-link" href="{{URL::to('/add-product')}}">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+       <path d="M11.23 7.29V3.283c0-.427.34-.782.77-.782.385 0 .711.298.763.677l.007.104v4.01h4.78c2.38 0 4.335 1.949 4.445 4.38l.005.215v5.04c0 2.447-1.887 4.456-4.232 4.569l-.208.005H6.44c-2.38 0-4.326-1.94-4.435-4.379L2 16.905v-5.03c0-2.447 1.878-4.466 4.222-4.58l.208-.004h4.8v6.402l-1.6-1.652a.755.755 0 00-1.09 0 .81.81 0 00-.22.568c0 .157.045.32.14.459l.08.099 2.91 3.015c.14.155.34.237.55.237a.735.735 0 00.465-.166l.075-.071 2.91-3.015c.3-.31.3-.816 0-1.126a.755.755 0 00-1.004-.077l-.086.077-1.59 1.652V7.291h-1.54z" />
+      </svg>
+      Create
+     </a>
+    
+    <a class="sidebar-link trending" href="{{URL::to('/')}}">
+     <svg viewBox="0 0 24 24" fill="currentColor">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.835 12.007l.002.354c.012 1.404.096 2.657.242 3.451 0 .015.16.802.261 1.064.16.38.447.701.809.905a2 2 0 00.91.219c.249-.012.66-.137.954-.242l.244-.094c1.617-.642 4.707-2.74 5.891-4.024l.087-.09.39-.42c.245-.322.375-.715.375-1.138 0-.379-.116-.758-.347-1.064-.07-.099-.18-.226-.28-.334l-.379-.397c-1.305-1.321-4.129-3.175-5.593-3.79 0-.013-.91-.393-1.343-.407h-.057c-.665 0-1.286.379-1.603.991-.087.168-.17.496-.233.784l-.114.544c-.13.874-.216 2.216-.216 3.688zm-6.332-1.525C3.673 10.482 3 11.162 3 12a1.51 1.51 0 001.503 1.518l3.7-.328c.65 0 1.179-.532 1.179-1.19 0-.658-.528-1.191-1.18-1.191l-3.699-.327z" />
+     </svg>
+     SignOut
+    </a>
+   
+   </div>
+  </div>
+  <div class="side-wrapper">
+   <div class="side-title">CATEGORY</div>
+   <div class="side-menu">
+    @foreach($category as $key => $cate)
+    <a class="sidebar-link" href="{{URL::to('/danh-muc-anime/'.$cate->slug_category_product)}}">
+     <svg viewBox="0 0 24 24" fill="currentColor" >
+     <circle class="angle-double-small-left"cx="50" cy="50" r="50"  stroke-width="8"/>
+     </svg>
+    {{$cate->category_product_name}}
+    </a>
+   @endforeach
+   </div>
+  </div>
+ </div>
+ <div class="wrapper">
+  <div class="header">
+   <div class="search-bar">
+    <form action="{{URL::to('/tim-kiem')}}" method="POST" >
+      {{csrf_field()}}
+    <input type="text" placeholder="Search" name="keywords_submit">
+  </form>
+   </div>
+   <div class="user-settings">
+    <img class="user-img" src="{{URL::to('public/images/avatar/'.Session::get('bloger_avt'))}}"alt="">
+    <div class="user-name"> <span><a href="{{URL::to('/profile')}}" class="nameprf" style="text-decoration: none;color:rgb(165, 164, 164);">
+      <?php
+          $name = Session::get('bloger_name');
+          if($name){
+              echo $name;
+              
+          }
+          ?></a></span></div>
+    <svg viewBox="0 0 492 492" fill="currentColor">
+     <path d="M484.13 124.99l-16.11-16.23a26.72 26.72 0 00-19.04-7.86c-7.2 0-13.96 2.79-19.03 7.86L246.1 292.6 62.06 108.55c-5.07-5.06-11.82-7.85-19.03-7.85s-13.97 2.79-19.04 7.85L7.87 124.68a26.94 26.94 0 000 38.06l219.14 219.93c5.06 5.06 11.81 8.63 19.08 8.63h.09c7.2 0 13.96-3.57 19.02-8.63l218.93-219.33A27.18 27.18 0 00492 144.1c0-7.2-2.8-14.06-7.87-19.12z"></path>
+    </svg>
+    <div class="notify">
+     <div class="notification"></div>
+    
+    </div>
+   </div>
+  </div>
+  <div class="main-container">
+    
+   @yield('content')
+   </div>
+ </div>
+</div>
+
+<script>
+  
+</script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://vjs.zencdn.net/5-unsafe/video.js'></script><script  src="{{URL::asset('public/frontend/js/javajspro')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+
+<script>
+  /*
+  $(document).ready(function() {
+      load_comment();
+function load_comment(){
+  var _token = $('input[name="_token"]').val();
+  var comment_product_id=  $('.comment_product_id').val();
+  $.ajax({
+url  : '{{url('/load-comment')}}',
+method: 'POST',
+data:{comment_product_id:comment_product_id,_token:_token},
+success: function(data){
+$('#load_comment').html(data);
+}
+})
+
+}
+$('.sent_comment').click(function(e){
+  e.preventDefault()
+  var comment = $('.comment').val();
+  var _token = $('input[name="_token"]').val();
+  var comment_product_id=  $('.comment_product_id').val();
+
+  $.ajax({
+url  : '{{url('/sent-comment')}}',
+method: 'POST',
+data:{comment_product_id:comment_product_id,comment:comment,_token:_token,},
+success:function(data){
+  alert("Xin cảm ơn","Đánh giá của bạn đang được kiểm duyệt","success")
+  load_comment();
+  $('.comment').val('');
+
+}
   })
 })
+  })*/
 </script>
-    <script src="{{asset('public/backend/ckeditor/ckeditor.js')}}"></script>
-    <script>
-     // Replace the <textarea id="editor1"> with a CKEditor
-     // instance, using default configuration.
-     CKEDITOR.replace('ckeditor');
-     CKEDITOR.replace('ckeditor1');
-     CKEDITOR.replace('ckeditor2');
-     CKEDITOR.replace('ckeditor3');
-     CKEDITOR.replace('id4');
-    </script>
-    
-    <script src="{{asset('public/frontend/js/shop.js')}}"></script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

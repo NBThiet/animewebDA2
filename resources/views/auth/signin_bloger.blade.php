@@ -75,7 +75,7 @@
  <!--      Forgot Password button-->
        <button class="btn submits frgt-pass"style="margin-left:-3px;">Forgot Password</button>
  <!--     Sign Up button -->
-  <span style="margin-top:20px;margin-left:2px;" class="btn submits sign-up"><a href="{{URL::to('/register')}}">Sign Up  </a>
+  <span style="margin-top:20px;margin-left:2px;background:rgb(73, 189, 235); color:#000;" class="btn submits sign-up"><a href="{{URL::to('/register')}}" style="text-decoration: none;color:rgb(39, 38, 38)">Sign Up  </a>
  <!--         Sign Up font icon -->
      
        <i class="fa fa-user-plus" aria-hidden="true"></i>

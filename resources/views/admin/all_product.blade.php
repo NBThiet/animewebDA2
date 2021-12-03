@@ -47,7 +47,7 @@
  <th>Tên </th>
 
  <th>Nguoi dang</th>
- <th>Hình sản phẩm</th>
+ <th>Video</th>
  <th>The loai</th>
  <th>Phut doc</th>
  
@@ -65,8 +65,10 @@ name="post[]"><i></i></label></td>
  <td>{{ $pro->product_name }}</td>
  
  <td>{{ $pro->bloger_name }}</td>
- <td><img src="public/uploads/product/{{ $pro->product_img }}"
-height="100" width="100"></td>
+ <td>
+  {{ $pro->product_video }}
+    
+</td>
  <td>{{ $pro->category_product_name }}</td>
  <td>{{ $pro->product_time}}</td>
  <td><span class="text-ellipsis">
